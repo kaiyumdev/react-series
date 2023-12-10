@@ -7,6 +7,7 @@ function customRender(reactElement, container) {
   container.appendChild(domElement);
   */
 
+  //another way to handle the case
   const domElement = document.createElement(reactElement.type);
   domElement.innerHTML = reactElement.children;
   for (const prop in reactElement.props) {
