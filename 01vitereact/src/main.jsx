@@ -20,13 +20,16 @@ const anotherElement = (
   </a>
 );
 
+const anotherUser = "chai aur react";
+
 const reactElement = React.createElement(
   "a",
   {
     href: "https://google.com",
     target: "_blank",
   },
-  "Click me to visit Google"
+  "Click me to visit Google",
+  anotherUser
 );
 
 ReactDOM.createRoot(document.getElementById("root")).render(reactElement);
