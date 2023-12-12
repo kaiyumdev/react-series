@@ -46,7 +46,9 @@ function App() {
               min={6}
               max={100}
               value={length}
-              onChange={(e) => setLength(e.target.value)}
+              onChange={(e) => {
+                setLength(e.target.value);
+              }}
             />
             <label htmlFor="">Length: {length}</label>
           </div>
@@ -55,9 +57,24 @@ function App() {
               type="checkbox"
               defaultChecked={numberAllowed}
               id="numberInput"
-              onChange={(prev) => !prev}
+              onChange={() => {
+                setNumberAllowed((prev) => !prev);
+              }}
               name=""
             />
+            <label htmlFor="numberInput">Numbers</label>
+          </div>
+          <div className="flex items-center gap-x-1">
+            <input
+              type="checkbox"
+              defaultChecked={charAllowed}
+              id="charInput"
+              onChange={() => {
+                setNumberAllowed((prev) => !prev);
+              }}
+              name=""
+            />
+            <label htmlFor="charInput">Characters</label>
           </div>
         </div>
       </div>
