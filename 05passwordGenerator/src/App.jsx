@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import { useCallback } from "react";
 
@@ -18,13 +18,17 @@ function App() {
     if (numberAllowed) str += "123456789";
     if (charAllowed) str += "!@#$^&*-_=+{}[]~`";
 
-    for (let index = 1; index <= array.length; index++) {
+    for (let index = 1; index <= length; index++) {
       let char = Math.floor(Math.random() * str.length + 1);
-      pass = str.charAt(char);
+      pass += str.charAt(char);
     }
 
     setPassword(pass);
   }, [length, numberAllowed, charAllowed, setPassword]);
+
+  useEffect(() => {
+    passwordGenerator();
+  }, [length, numberAllowed, charAllowed, passwordGenerator]);
 
   return (
     <>
@@ -68,13 +72,13 @@ function App() {
             <input
               type="checkbox"
               defaultChecked={charAllowed}
-              id="charInput"
+              id="characterInput"
               onChange={() => {
                 setNumberAllowed((prev) => !prev);
               }}
               name=""
             />
-            <label htmlFor="charInput">Characters</label>
+            <label htmlFor="characterInput">Characters</label>
           </div>
         </div>
       </div>
