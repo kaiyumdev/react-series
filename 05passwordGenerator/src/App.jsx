@@ -37,6 +37,28 @@ function App() {
             placeholder="password"
             className="outline-none w-full py-1 px-3 readonly"
           />
+          <button className="outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0"></button>
+        </div>
+        <div className="flex text-sm gap-x-2">
+          <div className="flex text-center gap-x-1">
+            <input
+              type="range"
+              min={6}
+              max={100}
+              value={length}
+              onChange={(e) => setLength(e.target.value)}
+            />
+            <label htmlFor="">Length: {length}</label>
+          </div>
+          <div className="flex items-center gap-x-1">
+            <input
+              type="checkbox"
+              defaultChecked={numberAllowed}
+              id="numberInput"
+              onChange={(prev) => !prev}
+              name=""
+            />
+          </div>
         </div>
       </div>
     </>
