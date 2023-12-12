@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
 import "./App.css";
@@ -13,9 +15,16 @@ function App() {
     let pass = "";
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxy";
 
-    if(numberAllowed) str +="123456789"
-    if(charAllowed) str +="!@#$^&*-_=+{}[]~`"
-  },[length, numberAllowed, charAllowed, setPassword])
+    if (numberAllowed) str += "123456789";
+    if (charAllowed) str += "!@#$^&*-_=+{}[]~`";
+
+    for (let index = 1; index <= array.length; index++) {
+      let char = Math.floor(Math.random() * str.length + 1);
+      pass = str.charAt(char);
+    }
+
+    setPassword(pass);
+  }, [length, numberAllowed, charAllowed, setPassword]);
 
   return (
     <>
