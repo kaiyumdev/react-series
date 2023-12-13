@@ -6,33 +6,62 @@ import "./App.css";
 import { useCallback } from "react";
 
 function App() {
+  // const [length, setLength] = useState(8);
+  // const [numberAllowed, setNumberAllowed] = useState(false);
+  // const [charAllowed, setCharAllowed] = useState(false);
+  // const [password, setPassword] = useState("");
+
+  // //useRef hooks
+  // let passwordRef = useRef(null);
+
+  // const passwordGenerator = useCallback(() => {
+  //   let pass = "";
+  //   let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxy";
+
+  //   if (numberAllowed) str += "123456789";
+  //   if (charAllowed) str += "!@#$^&*-_=+{}[]~`";
+
+  //   for (let index = 1; index <= length; index++) {
+  //     let char = Math.floor(Math.random() * str.length + 1);
+  //     pass += str.charAt(char);
+  //   }
+
+  //   setPassword(pass);
+  // }, [length, numberAllowed, charAllowed, setPassword]);
+
+  // const copyPasswordToClipboard = useCallback(() => {
+  //   passwordRef.current?.select();
+  //   window.navigator.clipboard.writeText(password);
+  // }, [password]);
+
+  // useEffect(() => {
+  //   passwordGenerator();
+  // }, [length, numberAllowed, charAllowed, passwordGenerator]);
+
   const [length, setLength] = useState(8);
   const [numberAllowed, setNumberAllowed] = useState(false);
   const [charAllowed, setCharAllowed] = useState(false);
   const [password, setPassword] = useState("");
 
-  //useRef hooks
-  let passwordRef = useRef(null);
+  const passwordFef = useRef();
 
   const passwordGenerator = useCallback(() => {
     let pass = "";
-    let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxy";
+    let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    if (numberAllowed) str += "0123456789";
+    if (charAllowed) str += "~`!@#${}%^&*_-=+";
 
-    if (numberAllowed) str += "123456789";
-    if (charAllowed) str += "!@#$^&*-_=+{}[]~`";
-
-    for (let index = 1; index <= length; index++) {
+    for (let index = 1; index < length; index++) {
       let char = Math.floor(Math.random() * str.length + 1);
       pass += str.charAt(char);
     }
-
     setPassword(pass);
   }, [length, numberAllowed, charAllowed, setPassword]);
 
   const copyPasswordToClipboard = useCallback(() => {
-    passwordRef.current?.select();
+    passwordFef.current?.select();
     window.navigator.clipboard.writeText(password);
-  }, [password]);
+  });
 
   useEffect(() => {
     passwordGenerator();
@@ -48,8 +77,8 @@ function App() {
             value={password}
             placeholder="password"
             className="outline-none w-full py-1 px-3"
-            ref={passwordRef}
             readOnly
+            ref={passwordFef}
           />
           <button
             onClick={copyPasswordToClipboard}
@@ -65,9 +94,7 @@ function App() {
               min={6}
               max={100}
               value={length}
-              onChange={(e) => {
-                setLength(e.target.value);
-              }}
+              onChange={(e) => setLength(e.target.value)}
             />
             <label htmlFor="">Length: {length}</label>
           </div>
@@ -76,10 +103,10 @@ function App() {
               type="checkbox"
               defaultChecked={numberAllowed}
               id="numberInput"
+              name=""
               onChange={() => {
                 setNumberAllowed((prev) => !prev);
               }}
-              name=""
             />
             <label htmlFor="numberInput">Numbers</label>
           </div>
@@ -88,10 +115,10 @@ function App() {
               type="checkbox"
               defaultChecked={charAllowed}
               id="characterInput"
+              name=""
               onChange={() => {
                 setCharAllowed((prev) => !prev);
               }}
-              name=""
             />
             <label htmlFor="characterInput">Characters</label>
           </div>
