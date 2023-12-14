@@ -37,6 +37,7 @@ function App() {
   // useEffect(() => {
   //   passwordGenerator();
   // }, [length, numberAllowed, charAllowed, passwordGenerator]);
+  //successfully completed
 
   const [length, setLength] = useState(8);
   const [numberAllowed, setNumberAllowed] = useState(false);
