@@ -67,6 +67,7 @@ function App() {
     window.navigator.clipboard.writeText(password);
   });
 
+  //use useEffect to run passwordGenerator function
   useEffect(() => {
     passwordGenerator();
   }, [length, numberAllowed, charAllowed, passwordGenerator]);
