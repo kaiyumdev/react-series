@@ -47,6 +47,7 @@ function App() {
   //useRef hooks
   const passwordFef = useRef();
 
+  //passwordGenerator functions
   const passwordGenerator = useCallback(() => {
     let pass = "";
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
