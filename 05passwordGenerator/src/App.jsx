@@ -61,6 +61,7 @@ function App() {
     setPassword(pass);
   }, [length, numberAllowed, charAllowed, setPassword]);
 
+  //copy password from input fields
   const copyPasswordToClipboard = useCallback(() => {
     passwordFef.current?.select();
     window.navigator.clipboard.writeText(password);
