@@ -44,8 +44,10 @@ function App() {
   const [charAllowed, setCharAllowed] = useState(false);
   const [password, setPassword] = useState("");
 
+  //useRef hooks
   const passwordFef = useRef();
 
+  //passwordGenerator functions
   const passwordGenerator = useCallback(() => {
     let pass = "";
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -59,11 +61,13 @@ function App() {
     setPassword(pass);
   }, [length, numberAllowed, charAllowed, setPassword]);
 
+  //copy password from input fields
   const copyPasswordToClipboard = useCallback(() => {
     passwordFef.current?.select();
     window.navigator.clipboard.writeText(password);
   });
 
+  //use useEffect to run passwordGenerator function
   useEffect(() => {
     passwordGenerator();
   }, [length, numberAllowed, charAllowed, passwordGenerator]);
