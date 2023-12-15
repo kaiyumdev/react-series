@@ -10,6 +10,14 @@ function App() {
   const [convertedAmount, setConvertedAmount] = useState(0);
 
   const currencyInfo = userCurrencyInfo(from);
+
+  const options = Object.keys(currencyInfo);
+  const swap = () => {
+    setFrom(to);
+    setTo(from);
+    setConvertedAmount(amount);
+    setAmount(convertedAmount);
+  };
   return <></>;
 }
 
