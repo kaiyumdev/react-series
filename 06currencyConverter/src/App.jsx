@@ -10,9 +10,12 @@ function App() {
   const [to, setTo] = useState("bdt");
   const [convertedAmount, setConvertedAmount] = useState(0);
 
+  //currencyInfo should contain the currency
   const currencyInfo = userCurrencyInfo(from);
 
   const options = Object.keys(currencyInfo);
+
+  //swap currency info with currency
   const swap = () => {
     setFrom(to);
     setTo(from);
@@ -20,6 +23,7 @@ function App() {
     setAmount(convertedAmount);
   };
 
+  //convert function
   const convert = () => {
     setConvertedAmount(amount * currencyInfo[to]);
   };

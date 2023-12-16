@@ -1,7 +1,9 @@
-import { useState } from "react";
-import { useEffect } from "react";
+/* eslint-disable react-hooks/rules-of-hooks */
+import { useState, useEffect } from "react";
 
 /* eslint-disable no-unused-vars */
+
+//setUp customHook name called userCurrencyInfo
 function userCurrencyInfo(currency) {
   const [data, setData] = useState({});
   useEffect(() => {
