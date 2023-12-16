@@ -10,6 +10,7 @@ function App() {
   const [to, setTo] = useState("bdt");
   const [convertedAmount, setConvertedAmount] = useState(0);
 
+  //currencyInfo should contain the currency
   const currencyInfo = userCurrencyInfo(from);
 
   const options = Object.keys(currencyInfo);
