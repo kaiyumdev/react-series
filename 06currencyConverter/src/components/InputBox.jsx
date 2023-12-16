@@ -3,7 +3,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useId } from "react";
 
-//function InputBox successfully
+//setUp function InputBox successfully
 function InputBox({
   label,
   amount,
