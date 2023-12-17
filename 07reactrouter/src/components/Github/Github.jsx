@@ -13,6 +13,7 @@ export const Github = () => {
   return (
     <div className="bg-gray-600 text-white text-3xl p-4 text-center m-4">
       Github Followers:{data.followers}
+      <img src={data.avatar_url} alt="Git Picture" width={300} />
     </div>
   );
 };
