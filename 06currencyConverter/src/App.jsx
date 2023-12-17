@@ -13,6 +13,7 @@ function App() {
   //currencyInfo should contain the currency
   const currencyInfo = userCurrencyInfo(from);
 
+  //setUp options successfully
   const options = Object.keys(currencyInfo);
 
   //swap currency info with currency
