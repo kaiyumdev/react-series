@@ -21,6 +21,7 @@ export const Github = () => {
   );
 };
 
+//another way to fetch the data by using loader methods
 export const githubInfoLoader = async () => {
   const response = await fetch("https://api.github.com/users/kaiyumdev");
   return response.json();
