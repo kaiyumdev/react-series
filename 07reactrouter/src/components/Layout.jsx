@@ -4,6 +4,7 @@ import { Header } from "./Header/Header";
 import { Outlet } from "react-router-dom";
 import { Footer } from "./Footer/Footer";
 
+//using layout to showing header and footer everywhere
 export const Layout = () => {
   return (
     <>
