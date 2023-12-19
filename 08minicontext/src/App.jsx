@@ -1,7 +1,8 @@
 import "./App.css";
+import UserContextProvider from "./context/UserContextProvider";
 
 function App() {
-  return <></>;
+  return <UserContextProvider></UserContextProvider>;
 }
 
 export default App;
