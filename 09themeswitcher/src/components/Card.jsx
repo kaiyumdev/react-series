@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import useTheme from "../context/Theme";
+// import useTheme from "../context/Theme";
 
 export default function Card() {
-  const { themeMode, lightTheme, darkTheme } = useTheme();
+  //   const { themeMode, lightTheme, darkTheme } = useTheme();
   return (
     <div className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <a href="/">
