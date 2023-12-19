@@ -1,6 +1,17 @@
-import React from "react";
+/* eslint-disable no-unused-vars */
+import React, { useState } from "react";
+import { useTodo } from "../context";
 
 function TodoForm() {
+  const [todo, setTodo] = useState("");
+  const { addTodo } = useTodo();
+
+  const add = (e) => {
+    e.preventDefault();
+    if (!todo) return;
+    addTodo({ todo, completed: false });
+    setTodo("");
+  };
   return (
     <form className="flex">
       <input
