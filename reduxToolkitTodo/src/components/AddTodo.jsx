@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../features/todo/todoSlice";
 
+//setUP addTodo
 function AddTodo() {
   const [input, setInput] = useState("");
   const dispatch = useDispatch();
