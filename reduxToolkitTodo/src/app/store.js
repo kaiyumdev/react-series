@@ -1,2 +1,3 @@
-import { configureStore } from "@reduxjs/toolkit";
+/* eslint-disable no-unused-vars */
+import { configureStore, nanoid } from "@reduxjs/toolkit";
 export const store = configureStore({});
