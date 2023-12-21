@@ -1,3 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { configureStore, nanoid } from "@reduxjs/toolkit";
-export const store = configureStore({});
+import todoReducer from "../features/todo/todoSlice";
+export const store = configureStore({
+  reducer: todoReducer,
+});
